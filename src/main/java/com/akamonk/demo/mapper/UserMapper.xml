@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.akamonk.demo.mapper.UserMapper">
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id" javaType="int"></id>
+        <result property="name" column="uname" javaType="string"></result>
+        <result property="password" column="upass" javaType="string"></result>
+    </resultMap>
+    <select id="getUserByID" parameterType="int" resultMap="userMap">
+        select * from `users` where id = #{id}
+    </select>
+</mapper>
